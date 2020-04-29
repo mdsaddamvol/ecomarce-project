@@ -47,4 +47,17 @@ provider.setCustomParameters({ prompt: "select_account" });
 
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
+export const convertSnapshot = (collection) => {
+	const collections = collection.docs.map((doc) => {
+		const data = doc.data();
+		return {
+			routeName: encodeURI(data.title.toLowerCase()),
+			id: doc.id,
+			title: data.title,
+			items: data.items,
+		};
+	});
+	return collections;
+};
+
 export default firebase;
