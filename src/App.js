@@ -12,6 +12,7 @@ import { setUserState } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import CheckOutPage from "./pages/cheakout-page/cheakOut-page.component";
+import Marque from "./components/marquue/marquee.component";
 
 class App extends Component {
 	unsubscribeFromAuth = null;
@@ -40,6 +41,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+				<Marque />
 				<Header />
 				<Switch>
 					<Route exact path='/' component={HomePage} />
