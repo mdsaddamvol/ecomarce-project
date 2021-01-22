@@ -6,13 +6,12 @@ import HomePage from "./pages/homepage/homepage.component";
 import Header from "./components/header/header.component.jsx";
 import Shop_page from "./pages/shop/shop_page.component.jsx";
 import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up-page";
-import { auth, createUserindatabase } from "./firebase/firebase-config";
+import { createUserindatabase, auth } from "./firebase/firebase-config";
 import { connect } from "react-redux";
 import { setUserState } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import CheckOutPage from "./pages/cheakout-page/cheakOut-page.component";
-import Marque from "./components/marquue/marquee.component";
 
 class App extends Component {
 	unsubscribeFromAuth = null;
@@ -41,7 +40,6 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Marque />
 				<Header />
 				<Switch>
 					<Route exact path='/' component={HomePage} />
